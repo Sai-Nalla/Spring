@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="st" class="com.nt.comp.Student">
+
+
+<!-- <property name="sno" value="1"/>
+<property name="sname" value="sai"/>
+<property name="addr" value="Hyd"/>
+<property name="avg" value="12"/> -->
+
+<constructor-arg value="1"/>
+<constructor-arg value="Sai"/>
+<constructor-arg value="Hyd"/>
+<constructor-arg value="45"/>
+
+</bean>
+</beans>
