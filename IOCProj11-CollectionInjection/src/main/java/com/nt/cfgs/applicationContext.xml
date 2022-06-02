@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+<!-- Collection Injection   -->
+<bean id="sysdate" class="java.util.Date">
+</bean>
+<bean id="dob" class="java.util.Date">
+<property name="year" value="90"/>
+<property name="month" value="11"/>
+<property name="date" value="2"/>
+</bean>
+
+
+<bean id="mk" class="com.nt.comp.MarksInfo">
+<property name="marks">
+<array>
+<value>10</value>
+<value>20</value>
+<value>30</value>
+</array>
+</property>
+
+<property name="dates">
+<array>
+<ref bean="sysdate"/>
+<ref bean="dob"/>
+</array>
+</property>
+</bean>
+
+
+<!--  List Injection  -->
+<bean id="cg" class="com.nt.comp.College">
+<property name="studName">
+<list>
+<value>Sai</value>
+<value>Vinay</value>
+<value>Karthik</value>
+</list>
+</property>
+<property name="dates">
+<list>
+<ref bean="sysdate"/>
+<ref bean="dob"/>
+</list>
+</property>
+</bean>
+
+			<!-- 	Set Injection -->
+<bean id="ci" class="com.nt.comp.ContactsInfo">
+<property name="phoneno">
+<set>
+<value>999999999</value>
+<value>888888888</value>
+<value>777777777</value>
+</set>
+</property>
+<property name="dates">
+<set>
+<ref bean="sysdate"/>
+<ref bean="dob"/>
+</set>
+</property>
+</bean>
+
+			<!-- 						Map Injection                            -->
+			<bean id="Ui" class="com.nt.comp.UniversityInfo">
+			<constructor-arg name="facultyDetails">
+			<map key-type="java.lang.Integer" value-type="java.lang.String">
+			<entry>
+			<key><value>1000</value></key>
+			<value>Rajesh</value>
+			</entry>
+			<entry key="1002" value="Suredh"/>
+			</map>
+			</constructor-arg>
+			<constructor-arg name="datesInfo">
+			<map key-type="java.lang.String" value-type="java.util.Date">
+			<entry>
+			<key><value>toDay</value></key>
+			<ref bean="sysdate"/>
+			</entry>
+			<entry key="dateofbirth" value-ref="dob"></entry>
+			</map>
+			</constructor-arg>
+			</bean>
+			
+						<!-- 				Properties Injection 						-->
+						<bean id="fi" class="com.nt.comp.Fruits">
+						<property name="fruitinfo">
+						<props>
+						<prop key="banana">yellow</prop>
+						<prop key="Apple">Red</prop>
+						<prop key="Grapes">Green</prop>
+						</props>
+						</property>
+						</bean>
+</beans>

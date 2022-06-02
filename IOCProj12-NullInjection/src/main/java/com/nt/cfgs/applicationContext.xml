@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="sysdate" class="java.util.Date"/>
+
+<bean id="date1" class="java.util.Date">
+<property name="year" value="99"/>
+<property name="date" value="5"/>
+<property name="month" value="4"/>
+</bean>
+
+<bean id="date2" class="java.util.Date">
+<property name="year" value="125"/>
+<property name="date" value="5"/>
+<property name="month" value="8"/>
+
+</bean>
+
+<bean id="info" class="com.nt.comp.PersonInfo">
+<constructor-arg name="acno" value="897796"/>
+<constructor-arg value="Hello"/>
+<constructor-arg ><null/></constructor-arg>
+<constructor-arg ><null/></constructor-arg>
+<constructor-arg ref="date2"/>
+</bean>
+</beans>
