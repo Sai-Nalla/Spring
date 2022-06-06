@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+     
+       <!--  Configuring Dependent Classs -->
+       
+       
+       <!-- Cfg Target Class Obj -->
+       <bean id="kohli" class="com.nt.beans.ProfessionalCricketer">
+       <property name="name" value="Kohli"/>
+       <property name="bat">
+       <bean  class="com.nt.beans.CricketBat">
+       <property name="batname" value="MRF"/>
+       </bean>
+       </property>
+       </bean>
+       
+ 
+       		<!-- 	Constructor Injection -->
+       		<bean id="Dhoni" class="com.nt.beans.ProfessionalCricketer">
+       		<constructor-arg value="Dhoni"/>
+       		<constructor-arg>
+       		<bean class="com.nt.beans.CricketBat">
+       		<constructor-arg value="Spartain"/>
+       		</bean>
+       		</constructor-arg>
+       		</bean>
+     </beans>

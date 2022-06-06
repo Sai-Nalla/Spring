@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  default-merge=" false" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+
+<bean id="eng1stYear" class="com.nt.comp.EnggCourse" abstract="true">
+<property name="subjects">
+<set>
+<value>C</value>
+<value>Drawing</value>
+<value>M1</value>
+</set>
+</property> 
+</bean>
+
+<bean id="CSE" class="com.nt.comp.EnggCourse" parent="eng1stYear">
+<property name="subjects" >
+<set merge="true">
+<value>DataStructure</value>
+<value>SoftwareEngg</value>
+<value>CloudComputing</value>
+</set>
+</property>
+</bean>
+
+<bean id="ECE" class="com.nt.comp.EnggCourse" parent="eng1stYear">
+<property name="subjects" >
+<set merge="default">
+<value>ADE</value>
+<value>Electronic</value>
+<value>AE</value>
+</set>
+</property>
+</bean>
+</beans>
